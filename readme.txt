@@ -1,6 +1,8 @@
 # Web Scraper to CSV
 
-This script scrapes data from a specified web page, extracts relevant information, and saves it into a CSV file. The script handles multiple tables on the page, processes data from linked pages, and consolidates everything into a single CSV file.
+This script scrapes data from a specified web page, extracts relevant information, and saves it into a CSV file. 
+The script handles multiple tables on the page, processes data from linked pages, 
+and consolidates everything into a single CSV file.
 
 ## Description
 
