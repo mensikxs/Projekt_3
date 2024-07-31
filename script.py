@@ -43,7 +43,7 @@ def get_data(soup: bs4.BeautifulSoup, header_list: list[str]) -> list[str]:
 
 def main_function():
     """Main function to scrape data and save it to a CSV file."""
-
+    
     print("scraping data...")
 
     headers = {
@@ -61,7 +61,7 @@ def main_function():
     base_titles = ["codes", "locations", "registered", "envelopes", "valid"]
     aditional_titles = get_data(parse_html(links[0]), headers["titles"])
     titles = base_titles + aditional_titles
-    
+
     combined_data = []
     for column_1, column_2, row in zip(codes, locations, data):
         combined_data.append([column_1, column_2] + row)
@@ -100,4 +100,4 @@ else:
 
 
 if __name__ == "__main__":
-    main_function()      
+    main_function()
