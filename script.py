@@ -33,10 +33,8 @@ def get_data(soup: bs4.BeautifulSoup, header_list: list[str]) -> list[str]:
     data = []
     for header in header_list:
         for item in soup.find_all("td", {"headers": header}):
-            value = item.get_text()
-            if value.endswith("-"):
-                continue
-            else:
+            value = item.get_text().strip()
+            if value != "-":
                 data.append(value)
     return data
 
@@ -71,7 +69,7 @@ def main_function():
         writer = csv.writer(file)
         writer.writerow(titles)
         writer.writerows(combined_data)
-    print("all done")
+    print("csv file has been created successfully")
 
 
 if len(sys.argv) != 3:
@@ -95,7 +93,7 @@ elif ".csv" not in sys.argv[2]:
     sys.exit(1)
 else:
     print(
-        "opening program.."
+        "opening Election scraper.."
     )
 
 
