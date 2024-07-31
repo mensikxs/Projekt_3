@@ -12,13 +12,13 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup as bs
 
 
-def parse_html(url: str) -> bs4.BeautifulSoup:
+def parse_html(url: str) -> bs:
     """Fetches and parses HTML content from the given URL."""
     soup = bs(get(url).text, "html.parser")
     return soup
 
 
-def get_links(soup: bs4.BeautifulSoup) -> list[str]:
+def get_links(soup: bs) -> list[str]:
     """Extracts and returns links from 'td' elements with class 'cislo'."""
     base_url = "https://volby.cz/pls/ps2017nss/"
     links = []
@@ -28,7 +28,7 @@ def get_links(soup: bs4.BeautifulSoup) -> list[str]:
     return links
 
 
-def get_data(soup: bs4.BeautifulSoup, header_list: list[str]) -> list[str]:
+def get_data(soup: bs, header_list: list[str]) -> list[str]:
     """Extracts data from 'td' elements based on provided headers."""
     data = []
     for header in header_list:
