@@ -115,7 +115,7 @@ def validate_input_args():
 
 
 def main_function():
-    """Main function to run the scraping and saving process generation."""
+    """Main function to run the scraping and CSV file generation."""
     validate_input_args()
     print("Scraping data...")
     headers = get_headers()
